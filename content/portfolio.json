@@ -1,0 +1,231 @@
+{
+  "person": {
+    "name": "João Victor Coelho de Mello",
+    "shortName": "João Victor",
+    "email": "victor.jmello7@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-victor-1754a6382/",
+    "github": "https://github.com/JMelloKDJ",
+    "location": "Salvador, Bahia",
+    "intro": "Dados, automação e IA aplicados a problemas reais. João Victor, estudante de Engenharia de Produção na UFBA.",
+    "portrait": {
+      "src": "assets/joao-victor-original.webp",
+      "srcSmall": "assets/joao-victor-original-540.webp",
+      "mask": "assets/joao-victor-mask.webp",
+      "alt": "João Victor Coelho de Mello, de camisa, em retrato frontal.",
+      "width": 900,
+      "height": 1200,
+      "publication": "public"
+    },
+    "resume": null
+  },
+  "cases": [
+    {
+      "slug": "aatamed",
+      "name": "AATAMED / Delta",
+      "number": "01",
+      "category": "IA conversacional",
+      "title": "Contexto e regras no atendimento com IA.",
+      "summary": "Uma conversa muda. As regras da operação precisam continuar claras. Contribuí para a evolução do agente, com estado conversacional, validações e testes.",
+      "homeRole": "Estado de conversa · validação · testes locais",
+      "context": "Delta é um agente de atendimento no ambiente Nexus da AATAMED. Meu recorte foi a evolução do comportamento e do estado de conversa, conectando a interpretação da IA às regras da operação.",
+      "problem": "Como dar continuidade à conversa sem tratar a interpretação da IA como fato confirmado ou autorização?",
+      "audience": "Equipes que estruturam e acompanham o atendimento conversacional.",
+      "role": "Atuei na definição de comportamento, estruturação do estado conversacional, integração de validações e implementação de testes. A implementação foi assistida por Claude Code, com decisões, revisão e validação do trabalho.",
+      "collaboration": "O trabalho integra uma plataforma existente. Minha contribuição está delimitada à evolução do agente; não representa autoria integral da plataforma Nexus.",
+      "stage": "Implementação + validação local",
+      "period": "Evolução de estado conversacional registrada em setembro de 2026.",
+      "solutions": [
+        {
+          "title": "Interpretar não é autorizar",
+          "text": "A compreensão revisável da conversa fica separada dos fatos e autorizações. Essa distinção permite atualizar uma interpretação sem transformá-la, por si só, em permissão para agir."
+        },
+        {
+          "title": "Preservar contexto com limites",
+          "text": "Validações de estrutura e rejeição de dados privados óbvios delimitam o que entra no estado. A continuidade precisa respeitar essas barreiras, inclusive nos caminhos de compatibilidade."
+        },
+        {
+          "title": "Examinar as exceções",
+          "text": "Verificações locais em TypeScript e PostgreSQL cobrem os contratos e seus casos de exceção. O recorte documentado sustenta a validação local; não comprova implantação ou comportamento de todas as conversas em produção."
+        }
+      ],
+      "evidence": "O registro de contribuição documenta a separação entre compreensão, fatos e autorizações, validações, compatibilidade e testes locais. A imagem acima é uma demonstração ilustrativa criada para explicar essa decisão, sem mensagens ou dados reais.",
+      "result": "Estado conversacional revisável com validações e verificações locais. O resultado demonstrado é técnico e delimitado a esse recorte da implementação.",
+      "limitations": "Não são apresentados resultados comerciais, métricas de produção ou garantia de estabilidade em atendimento real. Não há atribuição de RAG à Delta. Dados de pacientes, conversas, credenciais e conteúdo interno não integram esta página.",
+      "technologies": [
+        "TypeScript",
+        "PostgreSQL",
+        "Validações de estado",
+        "Testes locais"
+      ],
+      "cover": "assets/delta-editorial.svg",
+      "alt": "Uma preferência muda durante a conversa; a autorização permanece pendente.",
+      "publication": "public",
+      "links": [],
+      "featured": true,
+      "homeSummary": "Contribuí para a evolução do agente da AATAMED, estruturando estado de conversa, validações e testes. O foco: separar a interpretação da IA de fatos confirmados e autorizações.",
+      "indexDescription": "Estado de conversa, validações e testes."
+    },
+    {
+      "slug": "horus",
+      "name": "Hórus",
+      "number": "02",
+      "category": "Dados + operação",
+      "title": "Indicadores acompanhados na rotina.",
+      "summary": "Um painel para reunir metas. Uma rotina de alertas para levar o status dos indicadores às lideranças.",
+      "context": "O planejamento estratégico precisa de uma leitura comum entre áreas. O Hórus reúne metas e indicadores em um painel; o Farol Hórus leva o acompanhamento para a rotina das lideranças.",
+      "problem": "Como tornar os indicadores de diferentes áreas legíveis e manter o acompanhamento presente na rotina?",
+      "audience": "Lideranças e áreas da organização.",
+      "role": "Estruturei e evoluí o dashboard, sua base e guia de uso. Apoiei a área de Performance na implementação do Farol Hórus, integrei indicadores ao painel e construí rotinas de alertas. Também participei da capacitação para uso da ferramenta.",
+      "collaboration": "Trabalho no contexto da EJ ADM UFBA, em colaboração com a área de Performance. A contribuição abrange dados, dashboard, documentação e automação de acompanhamento.",
+      "stage": "Painel + automação",
+      "period": "Evolução registrada no ciclo 2026.1; o início da iniciativa não foi delimitado neste recorte.",
+      "solutions": [
+        {
+          "title": "Uma leitura compartilhada",
+          "text": "O painel reúne metas e KPIs por área. Os estados no alvo, atenção e fora do alvo dão contexto ao número e orientam a leitura do planejamento."
+        },
+        {
+          "title": "O indicador entra na rotina",
+          "text": "O Farol Hórus foi descrito como uma rotina semanal de cálculo de status e avisos por e-mail, WhatsApp e Slack. Painel e alerta são apresentados aqui como partes do mesmo acompanhamento."
+        },
+        {
+          "title": "Escopo bem definido",
+          "text": "A consolidação de quadros do Monday para avaliação de desempenho pertence ao AD Conexões. Ela não é atribuída ao Hórus sem documentação específica."
+        }
+      ],
+      "evidence": "Diagrama conceitual do painel e da rotina de alertas, elaborado a partir da descrição pública do projeto. A demonstração abaixo usa exclusivamente valores fictícios.",
+      "result": "A entrega descrita combina visualização de indicadores e comunicação periódica de status. O resultado apresentado é essa capacidade de acompanhamento; não há medição publicada de economia de tempo ou impacto no negócio.",
+      "limitations": "Os dados e o modelo do relatório operacional não fazem parte desta apresentação. A versão pública usa uma representação conceitual; a operação atual não foi revalidada.",
+      "technologies": [
+        "Power BI",
+        "DAX",
+        "n8n",
+        "Modelagem de dados"
+      ],
+      "cover": "assets/horus-editorial.svg",
+      "alt": "Diagrama ilustrativo: o indicador de entregas recebe um status de atenção, que orienta um aviso à equipe.",
+      "publication": "public",
+      "links": [],
+      "demo": "demonstracao/",
+      "featured": true,
+      "homeRole": "Dashboard · cálculo de status · alertas",
+      "homeSummary": "Estruturei e evoluí o dashboard de indicadores, sua base e guia de uso. Com a área de Performance, apoiei o Farol Hórus e automatizei alertas para acompanhar as metas.",
+      "indexDescription": "Dashboard e alertas para acompanhar metas."
+    },
+    {
+      "slug": "atena",
+      "name": "Atena",
+      "number": "03",
+      "category": "Conhecimento + IA aplicada",
+      "title": "Atendimento para uma plataforma de capacitação.",
+      "summary": "Atena é um ecossistema de capacitação da EJ ADM UFBA. Desenvolvi sua camada técnica de atendimento: chatbot de WhatsApp, consulta à base de conhecimento e encaminhamento de interessados à equipe.",
+      "context": "Atena é um ecossistema de capacitação da EJ ADM UFBA, com trilhas de conteúdo e uma comunidade voltada à formação empreendedora. O atendimento ajuda interessados a conhecer a plataforma e seus conteúdos.",
+      "problem": "Como orientar interessados sobre a plataforma e seus conteúdos, mantendo um caminho claro para a equipe assumir o atendimento?",
+      "audience": "Pessoas interessadas na plataforma e equipe responsável pelo atendimento.",
+      "role": "Desenvolvi a infraestrutura e a camada técnica: chatbot com recuperação de conhecimento no WhatsApp, ingestão automática de documentos e fluxo de encaminhamento de leads. Também contribuí na estruturação de módulos e aulas e no modelo de precificação do produto.",
+      "collaboration": "Atena foi idealizada por Yan Ferreira e desenvolvida em equipe na EJ ADM UFBA. Minha autoria está na infraestrutura e na contribuição técnica; não na criação integral do produto.",
+      "stage": "Entrega registrada em 2026.1",
+      "period": "Atuação em módulos e aulas registrada em 2025.2; evolução da infraestrutura e do chatbot no ciclo de 2026.1.",
+      "solutions": [
+        {
+          "title": "Consultar o conteúdo para responder",
+          "text": "O chatbot no n8n usa recuperação de conhecimento (RAG) para apoiar as respostas no WhatsApp. A ingestão de documentos alimenta a base consultada no atendimento."
+        },
+        {
+          "title": "Conectar a conversa à equipe",
+          "text": "Um fluxo de encaminhamento de leads, com canal dedicado de alertas, liga o atendimento automatizado à atuação humana. O registro de gestão descreve um lead real encaminhado e qualificado."
+        },
+        {
+          "title": "Sustentar o produto além do chatbot",
+          "text": "A contribuição técnica integrou o trabalho coletivo de estruturação de módulos e aulas e a inclusão de um modelo de precificação próprio do produto."
+        }
+      ],
+      "evidence": "A imagem deste caso é uma representação original do fluxo: conteúdo, atendimento e encaminhamento. Não é uma captura do produto. A descrição da entrega se apoia no registro de gestão de 2026.1; conversas e documentos internos não são publicados.",
+      "result": "O relatório do ciclo 2026.1 registra o chatbot funcional e a entrada em operação do fluxo de encaminhamento, com um lead real encaminhado e qualificado. Isso documenta uma entrega histórica, sem demonstrar adoção em escala ou impacto comercial.",
+      "limitations": "A operação atual da plataforma não foi revalidada. Não há nesta página uma avaliação pública da qualidade das respostas ou de conversão. A contribuição não representa autoria integral da Atena; materiais e integrações internos permanecem privados.",
+      "technologies": [
+        "n8n",
+        "WhatsApp",
+        "RAG"
+      ],
+      "cover": "assets/atena-editorial.svg",
+      "alt": "Materiais de capacitação conectados a uma pergunta pelo WhatsApp e ao encaminhamento para uma pessoa da equipe.",
+      "publication": "public",
+      "links": [],
+      "featured": true,
+      "homeRole": "Chatbot · base de conhecimento · encaminhamento",
+      "homeSummary": "Desenvolvi a camada técnica do chatbot de WhatsApp, com consulta à base de conhecimento e encaminhamento de interessados à equipe. Um projeto coletivo da EJ ADM UFBA, idealizado por Yan Ferreira.",
+      "indexDescription": "Conteúdo, WhatsApp e encaminhamento à equipe."
+    },
+    {
+      "slug": "matrix",
+      "name": "Matrix",
+      "number": "04",
+      "category": "Simulação + engenharia de dados",
+      "title": "Explorar cenários antes de decidir.",
+      "summary": "Um MVP de simulação que combina engenharia de dados e métodos estatísticos, com limites claros para o papel da IA.",
+      "context": "Matrix é um projeto em equipe da plataforma Odin. Seu conceito de gêmeos digitais sintéticos procura apoiar a exploração de cenários antes de uma decisão.",
+      "problem": "Como organizar dados, métodos e projeções em um fluxo de simulação que permita examinar as premissas de uma decisão?",
+      "audience": "Pessoas que precisam explorar cenários e interpretar projeções.",
+      "role": "Como Gerente de Desenvolvimento, arquitetei e construí a engenharia do MVP: motor de simulação, seleção de estimadores, camada de IA e estrutura de dados.",
+      "collaboration": "O conceito de gêmeos digitais veio da equipe. A fundamentação estatística foi desenvolvida com Davi Mariani. O projeto integra a plataforma Odin.",
+      "stage": "MVP · projeto em equipe",
+      "period": "MVP registrado no portfólio anterior; período de execução não informado.",
+      "solutions": [
+        {
+          "title": "Separar cálculo e interpretação",
+          "text": "O motor Monte Carlo usa semente fixa; a seleção de estimadores segue regras. A IA propõe e roteia métodos e interpreta saídas, sem assumir o cálculo dos resultados numéricos."
+        },
+        {
+          "title": "Colocar a validação no fluxo",
+          "text": "A descrição do MVP inclui calibração walk-forward e predição conforme. São componentes da abordagem implementada, não prova de acurácia ou garantia sobre cenários futuros."
+        },
+        {
+          "title": "Estruturar a base",
+          "text": "A engenharia utiliza Neon/Postgres, recuperação de conhecimento com pgvector e governança de dados em três níveis. Esta apresentação mantém apenas o escopo já descrito publicamente."
+        }
+      ],
+      "evidence": "Diagrama conceitual que separa entradas, cálculo estatístico e interpretação. As linhas de cenários na capa são ilustrativas; não são previsões produzidas pelo MVP.",
+      "result": "A entrega registrada é um MVP que encadeia entrada de dados, métodos estatísticos, projeções e interpretação. Não há benchmark público que permita afirmar acurácia, ganho financeiro ou validação em produção.",
+      "limitations": "Estágio registrado: MVP. Não são disponibilizados dados operacionais, código proprietário ou uma demonstração pública do sistema. A operação atual não foi revalidada.",
+      "technologies": [
+        "Python",
+        "Estatística aplicada",
+        "Postgres",
+        "IA aplicada"
+      ],
+      "cover": "assets/matrix.svg",
+      "alt": "Diagrama conceitual de cenários: entradas passam por um motor estatístico e se desdobram em projeções ilustrativas.",
+      "publication": "public",
+      "links": [],
+      "featured": false
+    }
+  ],
+  "archive": [
+    {
+      "name": "Oráculo",
+      "category": "Gestão do conhecimento",
+      "text": "Classificação de arquivos com IA, sugestão de pastas e confirmação pelo usuário no Slack, com trilha de auditoria."
+    },
+    {
+      "name": "Panorama Financeiro",
+      "category": "Dados + finanças",
+      "text": "Indicadores financeiros alimentados por integração com ERP, conforme a descrição pública do painel. Dados operacionais não exibidos."
+    },
+    {
+      "name": "AD Conexões + DGP",
+      "category": "Integração + desempenho",
+      "text": "Consolidação de dados de quadros do Monday para a base do painel de avaliação de desempenho. Relação documentada no portfólio anterior."
+    },
+    {
+      "name": "CRM Presidência",
+      "category": "Documentos + automação",
+      "text": "Extração de informações de documentos com IA para apoiar a atualização do CRM em Sheets e Monday."
+    },
+    {
+      "name": "Outros painéis",
+      "category": "Gestão + experiência",
+      "text": "Banco de Talentos, Radar de Talentos e CX: organização de competências, leitura de desempenho e acompanhamento da experiência. Apenas o escopo é apresentado."
+    }
+  ]
+}

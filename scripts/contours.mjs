@@ -1,0 +1,4 @@
+export function contours(kind){
+ const lines=Array.from({length:19},(_,i)=>{const n=i*14;return '<path d="M '+(-100+n*.45)+' '+(630-n*.7)+' C '+(220+n*.35)+' '+(710-n*.9)+', '+(460-n*.6)+' '+(410-n*.7)+', '+(380+n*.55)+' '+(260-n*.38)+' S '+(600+n*.2)+' '+(110+n*.4)+', '+(940+n*.15)+' '+(-50+n*.8)+'"/>';}).join('');
+ return '<div class="contour-art contour-'+kind+'" aria-hidden="true" data-ambient><svg viewBox="0 0 1000 680" fill="none" focusable="false"><defs><linearGradient id="contour-'+kind+'" x1="120" y1="590" x2="890" y2="70" gradientUnits="userSpaceOnUse"><stop stop-color="#244069"/><stop offset=".46" stop-color="#739fff"/><stop offset=".69" stop-color="#a9c8ff"/><stop offset="1" stop-color="#284b7c"/></linearGradient></defs><g class="contour-sheet" stroke="url(#contour-'+kind+')" stroke-width="1.4">'+lines+'</g></svg></div>';
+}

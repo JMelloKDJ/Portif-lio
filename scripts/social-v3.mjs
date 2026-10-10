@@ -1,0 +1,12 @@
+import {chromium} from 'playwright';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+const root=path.resolve(import.meta.dirname,'..');
+const font=(await fs.readFile(path.join(root,'assets/manrope-latin.woff2'))).toString('base64');
+const photo=(await fs.readFile(path.join(root,'assets/joao-victor-original.webp'))).toString('base64');
+const mask=(await fs.readFile(path.join(root,'assets/joao-victor-mask.webp'))).toString('base64');
+const browser=await chromium.launch({channel:'msedge',headless:true});
+const page=await browser.newPage({viewport:{width:1200,height:630}});
+await page.setContent(`<html lang="pt-BR"><head><style>@font-face{font-family:m;src:url(data:font/woff2;base64,${font})}*{box-sizing:border-box}body{margin:0;background:#090b0f;color:#f5f6f8;font-family:m,Arial}main{padding:65px 76px}small{font-size:24px;color:#b4bfd0}h1{font-size:82px;font-weight:650;letter-spacing:-4px;line-height:1.1;margin:20px 0}h1 span{color:#6597ff}h2{font-size:45px;color:#6597ff;font-weight:500;letter-spacing:-1.5px;margin:25px 0}p{font-size:24px;color:#afb9c9;line-height:1.6;margin-top:30px}.photo{position:absolute;right:55px;bottom:15px;width:430px;height:580px;object-fit:contain;filter:grayscale(.65) brightness(.86) contrast(1.08);mask-image:url(data:image/webp;base64,${mask}),linear-gradient(#000 65%,transparent);mask-mode:luminance,alpha;mask-size:contain,100% 100%;mask-position:center bottom;mask-repeat:no-repeat;mask-composite:intersect}footer{position:absolute;bottom:42px;left:76px;color:#a2afc4;font-size:17px}</style></head><body><main><small>Olá, eu sou</small><h1>João Victor<span>.</span></h1><h2>Dados &amp; IA.</h2><p>Conecto análise e tecnologia<br>para resolver problemas reais.</p></main><img class="photo" src="data:image/webp;base64,${photo}" alt="Retrato de João Victor"><footer>Engenharia de Produção · UFBA &nbsp; / &nbsp; Salvador, Bahia</footer></body></html>`);
+await page.evaluate(()=>document.fonts.ready);await page.locator('img').evaluate(i=>i.decode());
+await page.screenshot({path:path.join(root,'assets/social.png')});await browser.close();

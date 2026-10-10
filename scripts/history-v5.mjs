@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises';import {chromium} from 'playwright';
+const out='.review/v5-tests';await fs.mkdir(out,{recursive:true});const browser=await chromium.launch({channel:'msedge',headless:true,ignoreDefaultArgs:['--disable-back-forward-cache']});const checks=[];
+try{for(const width of [390,1440]){
+ const context=await browser.newContext({viewport:{width,height:width===390?844:900}});await context.addInitScript(()=>{window.restores=[];window.addEventListener('pageshow',e=>window.restores.push({persisted:e.persisted,type:performance.getEntriesByType('navigation')[0]?.type}));});
+ const page=await context.newPage();await page.goto('http://127.0.0.1:4173/Portif-lio/#horus',{waitUntil:'networkidle'});
+ await page.locator('#horus .project-card').click();await page.waitForURL('**/casos/horus/');await page.locator('.back').click();await page.waitForURL('**/#horus');await page.waitForTimeout(200);
+ await page.locator('#atena .project-card').click();await page.waitForURL('**/casos/atena/');await page.evaluate(()=>history.back());await page.waitForFunction(()=>location.pathname==='/Portif-lio/');await page.waitForTimeout(550);
+ const actual=await page.evaluate(()=>({hash:location.hash,focus:document.activeElement.closest('[data-project]')?.id,open:document.querySelector('[data-explorer]').open,restores:window.restores}));
+ checks.push({width,name:'Horus return, Atena, browser Back',...actual,pass:actual.open&&actual.focus==='atena'&&actual.hash==='#atena'});
+ await page.screenshot({path:`.review/v5-evidence/${width}-atena-history-return.png`});
+ await page.evaluate(()=>history.forward());await page.waitForFunction(()=>location.pathname.endsWith('/casos/atena/'));checks.push({width,name:'Browser Forward returns to Atena detail',pass:new URL(page.url()).pathname.endsWith('/casos/atena/')});
+ await page.locator('.back').click();await page.waitForURL('**/#atena');await page.waitForTimeout(300);checks.push({width,name:'Explicit case back still honors fragment',pass:await page.locator('#atena a').evaluate(el=>el===document.activeElement)});
+ await page.keyboard.press('Escape');await page.waitForTimeout(550);const closed=await page.locator('.explore-control').evaluate(el=>({top:el.getBoundingClientRect().top,bottom:el.getBoundingClientRect().bottom,height:innerHeight}));checks.push({width,name:'Close after Atena retains visible control',...closed,pass:closed.top>=0&&closed.bottom<=closed.height});
+ await page.keyboard.press('Enter');await page.waitForTimeout(550);const reopened=await page.locator('.explore-control').evaluate(el=>({top:el.getBoundingClientRect().top,bottom:el.getBoundingClientRect().bottom,height:innerHeight}));checks.push({width,name:'Reopen after Atena retains visible close',...reopened,pass:reopened.top>=0&&reopened.bottom<=reopened.height});
+ await context.close();
+}}catch(error){checks.push({name:'History runner',pass:false,error:error.message});}finally{await browser.close();}await fs.writeFile(`${out}/${process.env.HISTORY_REPORT||'history'}.json`,JSON.stringify(checks,null,2));console.log(JSON.stringify(checks));if(checks.some(c=>!c.pass))process.exitCode=1;

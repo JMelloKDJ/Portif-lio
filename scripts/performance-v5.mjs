@@ -1,0 +1,17 @@
+import fs from 'node:fs/promises';import path from 'node:path';import {chromium} from 'playwright';
+const out=path.resolve(process.env.TEST_DIR||'.review/v5-tests');await fs.mkdir(out,{recursive:true});const base=process.env.PREVIEW_URL||'http://127.0.0.1:4173/Portif-lio/';
+const browser=await chromium.launch({channel:'msedge',headless:true}),runs=[];
+for(const mode of ['desktop-local','mobile-throttled'])for(let run=1;run<=3;run++){
+ const context=await browser.newContext({viewport:mode==='desktop-local'?{width:1440,height:900}:{width:390,height:844}});
+ await context.addInitScript(()=>{window.lab={lcp:0,cls:0,longTasks:[]};new PerformanceObserver(list=>{for(const x of list.getEntries())window.lab.lcp=x.startTime;}).observe({type:'largest-contentful-paint',buffered:true});new PerformanceObserver(list=>{for(const x of list.getEntries())if(!x.hadRecentInput)window.lab.cls+=x.value;}).observe({type:'layout-shift',buffered:true});new PerformanceObserver(list=>{for(const x of list.getEntries())window.lab.longTasks.push(x.duration);}).observe({type:'longtask',buffered:true});});
+ const page=await context.newPage(),cdp=await context.newCDPSession(page);await cdp.send('Network.enable');await cdp.send('Network.setCacheDisabled',{cacheDisabled:true});
+ if(mode==='mobile-throttled'){await cdp.send('Network.emulateNetworkConditions',{offline:false,latency:150,downloadThroughput:200000,uploadThroughput:93750});await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});}
+ await page.goto(base,{waitUntil:'networkidle'});await page.waitForTimeout(1500);
+ const metrics=await page.evaluate(()=>{const n=performance.getEntriesByType('navigation')[0],rs=performance.getEntriesByType('resource');return {...window.lab,load:n.loadEventEnd,initialResources:rs.filter(r=>r.name.startsWith(location.origin)).map(r=>({path:new URL(r.name).pathname,bytes:r.encodedBodySize})),externalOrigins:[...new Set(rs.filter(r=>!r.name.startsWith(location.origin)&&!r.name.startsWith('data:')).map(r=>new URL(r.name).origin))]};});
+ await page.locator('.explorer-trigger').scrollIntoViewIfNeeded();await page.locator('.explorer-trigger').click();await page.waitForTimeout(650);
+ const explorer=await page.evaluate(()=>({open:document.querySelector('[data-explorer]').open,covers:[...document.querySelectorAll('.project-preview:not([hidden]) .choice-cover img')].every(i=>i.complete&&i.naturalWidth),activeAnimations:document.getAnimations().filter(a=>a.playState==='running'&&!a.effect?.target?.closest('[data-ambient]')).length,sceneBundleRequested:performance.getEntriesByType('resource').some(r=>r.name.endsWith('/scene.js'))}));
+ runs.push({mode,run,...metrics,explorer});console.log(JSON.stringify({mode,run,lcp:metrics.lcp,cls:metrics.cls,explorer}));await context.close();
+}
+const median=a=>a.sort((a,b)=>a-b)[Math.floor(a.length/2)];const medians=Object.fromEntries(['desktop-local','mobile-throttled'].map(mode=>[mode,{lcp:median(runs.filter(r=>r.mode===mode).map(r=>r.lcp)),cls:median(runs.filter(r=>r.mode===mode).map(r=>r.cls))}]));
+const passed=runs.every(r=>r.explorer.open&&r.explorer.covers&&!r.explorer.activeAnimations&&!r.explorer.sceneBundleRequested);
+await fs.writeFile(path.join(out,'performance.json'),JSON.stringify({browser:browser.version(),runs,medians,passed,transport:'Real HTTP, no cache. Mobile: 150ms latency, 1.6 Mbit/s, 4x CPU. Desktop loopback. Not physical-device or field INP evidence.'},null,2));console.log(JSON.stringify({medians,passed}));await browser.close();if(!passed)process.exitCode=1;

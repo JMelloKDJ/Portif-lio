@@ -1,0 +1,19 @@
+:root{--display:Manrope,Arial,sans-serif}
+.hero h1{font-family:Manrope,Arial,sans-serif;font-weight:600;font-size:clamp(4rem,6.3vw,6.5rem);letter-spacing:-.06em;line-height:1.04}
+.hero-role{font-size:clamp(1.7rem,2.2vw,2.15rem)}
+.closing{border-top:1px solid #2b3544;padding:78px 0 0;scroll-margin-top:26px;background:linear-gradient(160deg,#101722 0%,#090b0f 65%)}
+.closing-grid{display:grid;grid-template-columns:1fr 1fr;gap:13%;padding-bottom:70px}
+.closing h2{font:550 clamp(2rem,3vw,3rem)/1.12 Manrope,Arial,sans-serif;letter-spacing:-.05em;margin-top:22px;max-width:15ch}
+.closing-about>p:not(.eyebrow){color:#b7c2d2;font-size:.95rem;line-height:1.85;max-width:48ch;margin-top:25px}
+.closing-about .personal-note{color:#e2e8f2;font-size:1rem;max-width:29ch}
+.closing-contact{align-self:center;scroll-margin-top:30px}.closing-contact h2{font-size:clamp(2.6rem,4vw,4.3rem);max-width:10ch;margin-top:0}.closing-contact h2 span{color:var(--blue)}
+.closing-contact>p{font-size:.88rem;color:#b5c1d2;max-width:33ch;margin-top:20px}.closing-mail{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:clamp(.9rem,1.2vw,1.1rem);border-bottom:1px solid #6781aa;padding:16px 0;margin-top:18px;overflow-wrap:anywhere}.closing-mail>span{color:var(--blue);font-size:1.7rem}
+.closing-links{display:flex;gap:28px;margin-top:17px;font-size:.8rem}.closing-links a{min-height:44px;display:flex;align-items:center;gap:13px}.closing-links a span{color:var(--blue)}
+.closing .footer-line{margin-top:0;padding:22px 0;border-top:1px solid var(--line);align-items:center;color:#93a2b8}.closing .footer-line div{margin:0}.closing .footer-line .footer-signature{font-weight:600;color:#dce5f3;font-size:.85rem}.closing .footer-line .footer-location{margin-left:18px;font-size:.7rem}
+.case-hero h1{font-weight:550;font-size:clamp(2.5rem,5vw,5rem);line-height:1.1;letter-spacing:-.055em;max-width:17ch}.case-section h2{font-weight:550;font-size:1.5rem;line-height:1.3;letter-spacing:-.035em}.next-case a{font-weight:550;font-size:clamp(2rem,4vw,3.5rem)}.case-visual img{border-radius:8px}.case-visual figcaption{font-size:.75rem}.case-section .callout{font-size:.9rem}.demo-page h1{font-weight:550}
+@media(min-width:701px) and (max-width:1100px){.hero h1{font-size:clamp(3.15rem,6.1vw,5.25rem)}.closing-grid{gap:8%}.closing h2{font-size:2.1rem}.closing-contact h2{font-size:2.8rem}}
+@media(max-height:650px) and (min-width:900px){.hero h1{font-size:4.5rem}}
+@media(max-width:700px){.hero h1{font-size:clamp(2.9rem,13.7vw,4.8rem);letter-spacing:-.065em;line-height:1.15;margin-top:18px;margin-bottom:12px}.closing{padding-top:46px}.closing-grid{display:block;padding-bottom:39px}.closing h2{font-size:2.25rem;max-width:15ch;margin-top:17px}.closing-about>p:not(.eyebrow){font-size:.95rem;margin-top:23px}.closing-contact{margin-top:46px;padding-top:36px;border-top:1px solid var(--line)}.closing-contact h2{font-size:2.7rem;max-width:12ch;margin:0}.closing-contact>p{font-size:.87rem;margin-top:17px}.closing-mail{font-size:.92rem;margin-top:12px;padding-block:15px}.closing-links{font-size:.77rem;gap:30px;margin-top:13px}.closing .footer-line{display:flex;gap:18px;font-size:.7rem}.closing .footer-line .footer-signature{font-size:.73rem}.closing .footer-line .footer-location{display:block;margin:5px 0 0;font-size:.66rem}.closing .footer-line div{display:block}.case-hero h1{font-size:2.7rem;overflow-wrap:normal}.case-section h2{font-size:1.6rem}.case-deck{font-size:1rem}}
+
+/* Hórus: reveal the example before supporting explanation. */
+.demo-content{padding-top:12px}.demo iframe{margin-top:0}.demo-content>.text-link{margin-top:12px}.demo-page .back{margin-bottom:16px}.demo-page h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:16px 0}.demo-table{margin:20px 0}.demo-table caption{padding-bottom:14px}
