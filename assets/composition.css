@@ -4,11 +4,6 @@
 .contour-art svg{display:block;width:100%;height:100%;overflow:visible}.contour-sheet{transform-origin:50% 50%}.is-moving .contour-sheet{animation:contour-drift var(--motion-ambient) ease-in-out infinite alternate}
 @keyframes contour-drift{from{transform:translate(-14px,8px) rotate(-3deg) scale(.97);opacity:.7}to{transform:translate(14px,-10px) rotate(3deg) scale(1.03);opacity:1}}
 .hero-bottom{position:relative}.motion-toggle{background:none;border:0;color:#a7b7ce;font:inherit;font-size:.68rem;display:flex;gap:12px;align-items:center;min-height:44px;padding:0;order:2}.motion-toggle[hidden]{display:none}.hero-bottom>a{order:3}.motion-toggle:hover{color:var(--ink)}
-/* Clear destination hierarchy: the case is primary, preview remains an independent button. */
-.project-card h3>span{display:none}.project-card:hover h3,.project-card:focus-visible h3{color:var(--blue)}
-.case-action{display:inline-flex;align-items:center;gap:18px;font-size:.76rem;font-weight:600;color:#dbe8ff;margin-top:9px;border-bottom:1px solid #57749e;padding-bottom:2px}.case-action>span{color:var(--blue)}
-.preview-button{border:1px solid #43536b;border-radius:5px;padding:4px 12px;gap:8px;min-height:44px;margin-top:13px}.preview-button[aria-pressed=true]{background:#1a2940;border-color:#6788bc}.preview-button[aria-pressed=true]>span:last-child{transform:none;color:inherit}.preview-button>span:first-child{font-size:1.1rem;color:#a9c8ff}
-.choice-cover{display:block;position:relative}.cover-action{position:absolute;bottom:14px;right:14px;display:flex;gap:22px;align-items:center;background:#0a101dec;border:1px solid #4c6487;border-radius:4px;padding:8px 12px;font-size:.72rem;color:#e4edfc}.cover-action>span{color:var(--blue)}.choice-cover:hover .cover-action{background:#223857}.choice-cover:focus-visible{outline-offset:5px}
 /* A full-width profile has its own visual field; the invitation follows it. */
 .profile-section{position:relative;background:#0e141e;border-top:1px solid #29384b;border-bottom:1px solid #29384b;scroll-margin-top:24px;overflow:clip}
 .profile-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:5%;align-items:center;min-height:620px;padding-block:80px}
@@ -31,3 +26,5 @@
 
 /* Keep the moving sheet clear of the coordinate labels and pause control. */
 .profile-visual .contour-art{bottom:78px;overflow:hidden}
+
+.closing-links .contact-phone{white-space:nowrap;font-variant-numeric:tabular-nums}

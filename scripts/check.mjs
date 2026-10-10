@@ -15,7 +15,7 @@ for(const route of pages){
  assert.match(html,/<link rel="canonical" href="https:\/\/jmellokdj.github.io\/Portif-lio\//);
  assert.doesNotMatch(html,/app\.powerbi\.com|<iframe|PORTFOLIO_(REDESIGN_BRIEF|DIRECAO)|96,36|\+20|\+12|Bruma/);
  for(const match of html.matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)){
-  const href=match[1];if(/^(https?:|mailto:)/.test(href))continue;
+  const href=match[1];if(/^(https?:|mailto:|tel:)/.test(href))continue;
   let file=href.startsWith('/Portif-lio/')?path.join(root,href.slice(12)):path.resolve(root,path.dirname(route),href);
   const st=await fs.stat(file).catch(()=>null);
   assert.ok(st,`${route}: missing ${href}`);

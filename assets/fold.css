@@ -34,3 +34,13 @@
 
 /* The static fallback keeps a softer reflection and a full-surface mask. */
 .fold-static{opacity:.65}
+
+/* A single continuous field crosses behind the name and portrait. Both axes
+   fade before the SVG bounds, including throughout the ambient movement. */
+.home-surface .hero>.contour-art{inset:0 -8%;width:116%;height:100%;opacity:.48;overflow:visible;mask-image:radial-gradient(ellipse 58% 48% at 50% 48%,#000 20%,#000b 55%,transparent 100%)}
+.home-surface .hero>.contour-art svg{overflow:visible}
+@media(max-width:700px){.home-surface .hero>.contour-art{inset:5% -7% auto;width:114%;height:66%;opacity:.36;overflow:visible;mask-image:radial-gradient(ellipse 60% 50% at 50% 48%,#000 15%,#000a 58%,transparent 100%)}}
+
+.closing-fold .closing-links{flex-wrap:wrap;column-gap:28px;row-gap:0}
+
+.home-surface{overflow:clip}

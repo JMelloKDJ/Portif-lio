@@ -3,6 +3,7 @@
     "name": "João Victor Coelho de Mello",
     "shortName": "João Victor",
     "email": "victor.jmello7@gmail.com",
+    "phone": {"number": "+5571987723214", "display": "+55 (71) 98772-3214"},
     "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-victor-1754a6382/",
     "github": "https://github.com/JMelloKDJ",
     "location": "Salvador, Bahia",
@@ -48,7 +49,7 @@
           "text": "Verificações locais em TypeScript e PostgreSQL cobrem os contratos e seus casos de exceção. O recorte documentado sustenta a validação local; não comprova implantação ou comportamento de todas as conversas em produção."
         }
       ],
-      "evidence": "O registro de contribuição documenta a separação entre compreensão, fatos e autorizações, validações, compatibilidade e testes locais. A imagem acima é uma demonstração ilustrativa criada para explicar essa decisão, sem mensagens ou dados reais.",
+      "evidence": "O registro de contribuição documenta a separação entre compreensão, fatos e autorizações, validações, compatibilidade e testes locais.",
       "result": "Estado conversacional revisável com validações e verificações locais. O resultado demonstrado é técnico e delimitado a esse recorte da implementação.",
       "limitations": "Não são apresentados resultados comerciais, métricas de produção ou garantia de estabilidade em atendimento real. Não há atribuição de RAG à Delta. Dados de pacientes, conversas, credenciais e conteúdo interno não integram esta página.",
       "technologies": [

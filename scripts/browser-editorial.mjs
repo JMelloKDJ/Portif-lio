@@ -15,7 +15,7 @@ try{
   await page.locator('.explorer-trigger').click();
   for(const id of ['aatamed','horus','atena']){
    const button=page.locator(`[data-select="${id}"]`);await button.focus();await page.keyboard.press('Space');await page.waitForTimeout(420);
-   check(`Preview keyboard ${width} ${id}`,await button.getAttribute('aria-pressed')==='true'&&await button.evaluate(e=>e===document.activeElement)&&await page.locator('[data-panel]:visible').count()===1&&await page.locator(`[data-panel="${id}"]`).isVisible());
+   check(`Preview keyboard ${width} ${id}`,await button.isChecked()&&await button.evaluate(e=>e===document.activeElement)&&await page.locator('[data-panel]:visible').count()===1&&await page.locator(`[data-panel="${id}"]`).isVisible());
    b=await bounds();check(`Selected layout ${width} ${id}`,b.width===b.scroll&&!b.missing,b);
    const rests=await page.waitForFunction(()=>document.getAnimations().filter(a=>!a.effect?.target?.closest('[data-ambient]')).every(a=>a.playState!=='running'),{},{timeout:1000}).then(()=>true,()=>false);
    check(`Resting scene ${width} ${id}`,rests,await page.evaluate(()=>document.getAnimations().filter(a=>a.playState==='running'&&!a.effect?.target?.closest('[data-ambient]')).map(a=>({target:a.effect?.target?.className,timing:a.effect?.getComputedTiming()}))));
@@ -29,9 +29,9 @@ try{
  }
  const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'reduce'}),page=await context.newPage();
  await page.goto(base+'#atena',{waitUntil:'networkidle'});check('Direct fragment selects Atena',await page.locator('[data-panel="atena"]').isVisible()&&await page.locator('[data-explorer]').evaluate(e=>e.open));
- await page.locator('[data-select="horus"]').click();check('Reduced motion has no animation',await page.evaluate(()=>document.getAnimations().length===0));
+ await page.locator('label[for="select-horus"]').click();check('Reduced motion has no animation',await page.evaluate(()=>document.getAnimations().length===0));
  await page.locator('[data-panel="horus"] .preview-case-link').click();await page.waitForURL('**/casos/horus/');await page.goBack({waitUntil:'networkidle'});
- check('Preview CTA browser return restores Hórus',await page.locator('[data-panel="horus"]').isVisible()&&await page.locator('#horus .project-card').evaluate(e=>e===document.activeElement));
+ check('Preview CTA browser return restores Hórus',await page.locator('[data-panel="horus"]').isVisible()&&await page.locator('#horus [data-select]').evaluate(e=>e===document.activeElement));
  await context.close();
  check('No page errors',errors.length===0,errors);
 }finally{await browser.close();}
