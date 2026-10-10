@@ -1,0 +1,36 @@
+/* One graphite field, from the collection to the last line. UI feedback: 300ms. */
+.home-surface{position:relative;isolation:isolate;--fold-top:800px;background:#090c11}
+.home-surface>main,.home-surface>.closing-fold{position:relative;z-index:1}
+.fold-surface{position:absolute;inset:var(--fold-top) 0 0;pointer-events:none;overflow:hidden}
+.fold-surface::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.16' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");opacity:.13;mix-blend-mode:soft-light}
+.fold-static,.fold-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fold-canvas{opacity:0}.fold-surface.is-rendered .fold-canvas{opacity:1}.fold-surface.is-rendered .fold-static{visibility:hidden}
+.home-surface .projects-explorable{background:transparent}
+.profile-fold{background:transparent;border:0;overflow:visible;padding:64px 0 58px;scroll-margin-top:32px}
+.profile-fold .profile-copy{max-width:560px}.profile-fold .profile-copy h2{font-size:clamp(2.2rem,3.3vw,3.4rem);margin:22px 0 24px}.profile-fold .profile-bio{margin-top:22px;max-width:46ch}
+.closing-fold{background:transparent;border:0;padding:0}
+.closing-fold .closing-contact{min-height:480px;display:flex;align-items:center;padding:60px 0 90px;margin:0;border:0;scroll-margin-top:60px}
+.contact-core{margin-left:42%;width:58%;position:relative}
+.closing-fold #contact-title{font:500 .72rem/1.4 Manrope,Arial,sans-serif;letter-spacing:.15em;color:#9bb5d5;margin:0 0 22px;max-width:none;text-transform:uppercase}
+.closing-fold .closing-mail{display:inline-block;font-size:clamp(1.9rem,2.5vw,2.5rem);font-weight:450;letter-spacing:-.045em;line-height:1.35;margin:0;padding:4px 0 12px;border:0;max-width:100%;color:#edf2f8;position:relative;white-space:nowrap;transition:color 300ms ease}
+.closing-fold .closing-mail::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:1px;background:#8daed6;transform:scaleX(.12);transform-origin:left;opacity:.6;transition:transform 300ms cubic-bezier(.2,.75,.25,1),opacity 300ms ease}
+.closing-fold .closing-mail:is(:hover,:focus-visible){color:#acccf5}.closing-fold .closing-mail:is(:hover,:focus-visible)::after{transform:scaleX(1);opacity:1}
+.closing-fold .contact-note{font-size:.9rem;line-height:1.8;color:#adbbcf;margin:22px 0 0;max-width:45ch}
+.closing-fold .closing-links{display:flex;gap:28px;margin-top:19px;font-size:.8rem}.closing-fold .closing-links a{color:#dde6f3;min-height:44px;text-decoration:underline;text-decoration-color:#4a5b71;text-underline-offset:6px;transition:color 300ms ease,text-decoration-color 300ms ease}.closing-fold .closing-links a:is(:hover,:focus-visible){color:#aaccfa;text-decoration-color:#aaccfa}
+.closing-fold .footer-line{border:0;padding:20px 0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0;color:#8e9eb5;font-size:.7rem}
+.closing-fold .footer-line .footer-signature{font-size:.74rem;font-weight:450;color:#aebdd0}.closing-fold .footer-line .footer-location{display:block;margin:6px 0 0;font-size:.67rem}.closing-fold .footer-line>a{min-height:44px;display:flex;align-items:center;order:3}.closing-fold .motion-toggle{font-size:.67rem;color:#a4b4ca}
+.home-surface .hero>.contour-art{opacity:.5;mask-image:linear-gradient(0deg,transparent,#000 25%,#000 75%,transparent);overflow:visible}.contour-sheet{animation:contour-drift 4.5s ease-in-out infinite alternate;animation-play-state:paused}.is-moving .contour-sheet{animation-duration:4.5s;animation-play-state:running}
+@keyframes contour-drift{from{transform:translate(-28px,12px) rotate(-4deg) scale(.95);opacity:.7}to{transform:translate(28px,-14px) rotate(4deg) scale(1.04);opacity:1}}
+@media(max-width:1100px) and (min-width:701px){.contact-core{margin-left:32%;width:68%}.closing-fold .closing-mail{font-size:clamp(1.9rem,3.3vw,2.5rem)}.profile-fold{padding:52px 0}.closing-fold .closing-contact{min-height:430px}}
+@media(max-width:700px){
+ .home-surface{--fold-top:780px}.home-surface .wrap{width:calc(100% - 48px)}
+ .profile-fold{padding:40px 0 46px}.profile-fold .profile-copy h2{font-size:clamp(1.85rem,7.7vw,2.8rem);letter-spacing:-.052em;line-height:1.2}.profile-fold .profile-intro{font-size:.95rem}.profile-fold .profile-bio{font-size:.88rem;line-height:1.85;max-width:36ch}
+ .closing-fold .closing-contact{min-height:360px;padding:80px 0 65px;align-items:flex-start;scroll-margin-top:30px}.contact-core{margin-left:0;width:100%}.closing-fold #contact-title{font-size:.68rem;margin-bottom:20px}.closing-fold .closing-mail{font-size:clamp(1.2rem,5.2vw,1.8rem);letter-spacing:-.055em;padding-bottom:14px;white-space:nowrap}.closing-fold .contact-note{font-size:.83rem;line-height:1.8;margin-top:22px;max-width:33ch}.desktop-break{display:none}.closing-fold .closing-links{font-size:.78rem;gap:28px;margin-top:17px}
+ .closing-fold .footer-line{padding:24px 0;display:grid;grid-template-columns:1fr auto;gap:10px 20px}.closing-fold .footer-line>span{grid-column:1/-1}.closing-fold .footer-line .footer-signature{font-size:.72rem}.closing-fold .footer-line .footer-location{font-size:.65rem}.closing-fold .motion-toggle{grid-column:1;grid-row:2;justify-self:start;font-size:.65rem}.closing-fold .footer-line>a{grid-column:2;grid-row:2;font-size:.65rem}.home-surface .hero>.contour-art{opacity:.34;overflow:hidden}.contour-sheet,.is-moving .contour-sheet{animation-name:contour-drift-mobile;animation-duration:4.5s}
+}
+@media(prefers-reduced-motion:reduce){.contour-sheet,.is-moving .contour-sheet{animation:none}.closing-fold .closing-mail,.closing-fold .closing-mail::after,.closing-fold .closing-links a{transition:none}}
+
+.fold-static-mobile{display:none}@media(max-width:700px){.fold-static-mobile{display:block}.fold-static-desktop{display:none}}
+
+/* The static fallback keeps a softer reflection and a full-surface mask. */
+.fold-static{opacity:.65}

@@ -1,10 +1,11 @@
 import {contours} from './contours.mjs';
 import {renderExplorer} from './explorer.mjs';
 import {renderClosing} from './closing.mjs';
+import {renderFold} from './fold.mjs';
 // All identity, project content and navigation remain semantic HTML.
 export function renderHome({header,contact,portrait,chapter,selected,p,arrow}) {
  return `${header()}
-<main id="conteudo" tabindex="-1">
+<div class="home-surface">${renderFold()}<main id="conteudo" tabindex="-1">
  <section class="hero wrap ${p.portrait?'with-portrait':'without-portrait'}" aria-labelledby="hero-title">
   ${contours('hero')}<div class="hero-copy">
    <div class="hero-intro">
@@ -25,5 +26,5 @@ export function renderHome({header,contact,portrait,chapter,selected,p,arrow}) {
   <div class="hero-bottom"><button class="motion-toggle" type="button" aria-pressed="false" hidden>Pausar movimento <span aria-hidden="true">Ⅱ</span></button><p>Salvador, Bahia <span>Brasil</span></p><a href="#projetos">Trabalhos selecionados <span aria-hidden="true">↓</span></a></div>
  </section>
  ${renderExplorer(selected)}
-${renderClosing(p,{about:true}).replace('<footer','</main><footer')}`;
+${renderClosing(p,{about:true}).replace('<footer','</main><footer')}</div>`;
 }
