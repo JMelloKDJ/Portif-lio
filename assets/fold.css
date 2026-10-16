@@ -44,3 +44,9 @@
 .closing-fold .closing-links{flex-wrap:wrap;column-gap:28px;row-gap:0}
 
 .home-surface{overflow:clip}
+
+/* The portrait fades at its edges, so the contour field showed through the
+   shoulders. A surface-coloured silhouette sits under the photo and keeps the
+   lines behind the figure. */
+.home-surface .portrait.has-portrait::before{content:"";position:absolute;inset:0;background:#090c11;mask-image:url('joao-victor-mask.webp'),linear-gradient(#000 82%,transparent 100%);mask-mode:luminance,alpha;mask-size:100% 100%;mask-repeat:no-repeat;mask-composite:intersect}
+

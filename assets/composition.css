@@ -28,3 +28,12 @@
 .profile-visual .contour-art{bottom:78px;overflow:hidden}
 
 .closing-links .contact-phone{white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* Wide screens: the composition was tuned around 1600px. Above that it scales
+   as a whole instead of leaving a narrow column with empty sides. */
+@media(min-width:1800px){html{zoom:1.12}}
+@media(min-width:2000px){html{zoom:1.25}}
+@media(min-width:2300px){html{zoom:1.4}}
+@media(min-width:2600px){html{zoom:1.55}}
+@media(min-width:3000px){html{zoom:1.8}}
+@media(min-width:3500px){html{zoom:2.1}}
