@@ -76,3 +76,11 @@
 .projects-explorable:has(.project-explorer[open])::before{opacity:.4}
 @media(max-width:700px){.projects-explorable::before{inset:0 -6%;background:radial-gradient(ellipse 70% 30% at 50% 62%,var(--project-glow) 0%,transparent 70%)}}
 @media(prefers-reduced-motion:reduce){.projects-explorable,.projects-explorable::before{transition:none}}
+
+/* The selected title shares the light of its preview, so the pair reads as one. */
+.project-choice::before{content:"";position:absolute;z-index:-1;inset:-14% -22% -14% -16%;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 32% 52%,var(--project-glow) 0%,transparent 72%);opacity:0;transition:opacity .45s ease}
+.project-choice:has(:checked)::before{opacity:.26}
+.project-choice::after{background:linear-gradient(90deg,var(--project-glow,#8ab0e1),transparent)}
+.project-choice:has(:checked) .choice-number,.project-choice:has(:checked) .selection-mark{color:color-mix(in srgb,var(--project-glow) 45%,#fff)}
+@media(max-width:700px){.project-choice::before{inset:-10% -30%;background:radial-gradient(ellipse 50% 50% at 50% 55%,var(--project-glow) 0%,transparent 72%)}}
+@media(prefers-reduced-motion:reduce){.project-choice::before{transition:none}}
