@@ -94,17 +94,17 @@
           "text": "A consolidação de quadros do Monday para avaliação de desempenho pertence ao AD Conexões. Ela não é atribuída ao Hórus sem documentação específica."
         }
       ],
-      "evidence": "Captura da página Farol Hórus do relatório em Power BI. A demonstração abaixo usa exclusivamente valores fictícios.",
+      "evidence": "Captura da página DPSD do relatório em Power BI, preenchida com dados fictícios. A demonstração abaixo também usa exclusivamente valores fictícios.",
       "result": "A entrega descrita combina visualização de indicadores e comunicação periódica de status. O resultado apresentado é essa capacidade de acompanhamento; não há medição publicada de economia de tempo ou impacto no negócio.",
-      "limitations": "A captura mostra apenas a página de acompanhamento do Farol; páginas com dados de membros não são reproduzidas. O modelo do relatório não faz parte desta apresentação, e a operação atual não foi revalidada.",
+      "limitations": "Os nomes, e-mails e valores exibidos na captura são fictícios. O modelo do relatório não faz parte desta apresentação, e a operação atual não foi revalidada.",
       "technologies": [
         "Power BI",
         "DAX",
         "n8n",
         "Modelagem de dados"
       ],
-      "cover": "assets/horus-farol.webp",
-      "alt": "Página Farol Hórus do painel em Power BI: semáforo de status, diretoria e data de referência, calendário e evolução do farol dos KPIs e KRs.",
+      "cover": "assets/horus-dpsd.webp",
+      "alt": "Página DPSD do painel em Power BI, com dados fictícios: meta de OKR, farol, correlação e completude dos planos de ação, evolução dos KRs, carga por executor e planos com maior completude.",
       "publication": "public",
       "links": [],
       "demo": "demonstracao/",

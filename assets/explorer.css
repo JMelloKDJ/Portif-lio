@@ -65,3 +65,14 @@
 /* The stacked covers scale with the column width, so the stage must too;
    a fixed 360px height let them cross the section rules on wide layouts. */
 @media(min-width:1101px){.explorer-teaser{height:auto;aspect-ratio:19/10}}
+
+/* Open collection: a soft light behind the preview, tinted by the selected
+   project. Pure CSS (:has on the native radios), so it also works without JS. */
+@property --project-glow{syntax:'<color>';inherits:true;initial-value:#4f8cff}
+.projects-explorable{position:relative;isolation:isolate;--project-glow:#4f8cff;transition:--project-glow .45s ease}
+.projects-explorable:has(#select-horus:checked){--project-glow:#7b3cff}
+.projects-explorable:has(#select-atena:checked){--project-glow:#3aa0b0}
+.projects-explorable::before{content:"";position:absolute;z-index:-1;inset:0 -12%;pointer-events:none;background:radial-gradient(ellipse 46% 52% at 68% 56%,var(--project-glow) 0%,transparent 70%);opacity:0;transition:opacity .45s ease}
+.projects-explorable:has(.project-explorer[open])::before{opacity:.4}
+@media(max-width:700px){.projects-explorable::before{inset:0 -6%;background:radial-gradient(ellipse 70% 30% at 50% 62%,var(--project-glow) 0%,transparent 70%)}}
+@media(prefers-reduced-motion:reduce){.projects-explorable,.projects-explorable::before{transition:none}}
