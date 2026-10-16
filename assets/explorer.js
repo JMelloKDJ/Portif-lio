@@ -30,7 +30,9 @@ if(explorer){
  function reveal(id){
   if(!choices.some(c=>c.id===id))return;
   explorer.open=true;select(id);
-  requestAnimationFrame(()=>{const target=choices.find(c=>c.id===id);target.querySelector('[data-select]').focus({preventScroll:true});target.scrollIntoView({block:'nearest',behavior:'instant'});});
+  requestAnimationFrame(()=>{const target=choices.find(c=>c.id===id);target.querySelector('[data-select]').focus({preventScroll:true});
+   // Bring the whole list and its preview into view, not just the chosen title.
+   explorer.querySelector('.project-selection').scrollIntoView({block:'start',behavior:'instant'});});
  }
  const hash=()=>reveal(location.hash.slice(1));
  function restore(event){

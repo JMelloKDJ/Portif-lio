@@ -60,8 +60,10 @@
 .flow-next a:is(:hover,:focus-visible) .flow-next-name{color:#acccf5}
 
 .case-surface .closing-fold .closing-contact{min-height:420px}
+/* The contact closes the same right-hand column as the blocks above it. */
+.case-surface .contact-core{margin-left:calc(98% - min(560px,46%));width:auto}
 
-@media(max-width:1100px) and (min-width:701px){.flow-copy,.flow-next a{width:min(560px,56%)}.flow-block{padding:90px 0}}
+@media(max-width:1100px) and (min-width:701px){.flow-copy,.flow-next a{width:min(560px,56%)}.flow-block{padding:90px 0}.case-surface .contact-core{margin-left:calc(98% - min(560px,56%))}}
 @media(max-width:700px){
  .case-surface .wrap{width:calc(100% - 48px)}
  .flow-hero{min-height:0;padding:28px 0 56px}.flow-hero .back{margin-bottom:24px}
@@ -73,5 +75,6 @@
  .flow-copy>.flow-statement{font-size:1.45rem}
  .flow-decisions li{padding-left:40px}
  .flow-next{padding:40px 0 10px}
+ .case-surface .contact-core{margin-left:0}
 }
 @media(prefers-reduced-motion:reduce){.flow-canvas,.flow-next-name{transition:none}}
