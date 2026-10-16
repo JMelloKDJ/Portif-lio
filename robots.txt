@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jmellokdj.github.io/Portif-lio/sitemap.xml

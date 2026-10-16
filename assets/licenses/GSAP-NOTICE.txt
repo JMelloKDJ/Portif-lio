@@ -1,0 +1,6 @@
+GSAP 3.13.0 and ScrollTrigger 3.13.0
+Copyright 2008-2025 GreenSock. All rights reserved.
+Author: Jack Doyle, jack@greensock.com
+Package license declaration: Standard 'no charge' license.
+Terms: https://gsap.com/standard-license
+Bundled notices are also preserved in ../scene.js.LEGAL.txt.

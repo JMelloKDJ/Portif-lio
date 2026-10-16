@@ -1,0 +1,28 @@
+{
+  "name": "joao-victor-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs",
+    "test": "node scripts/check.mjs",
+    "test:browser": "node scripts/browser-v5.mjs",
+    "audit": "node scripts/performance-v5.mjs",
+    "record": "node scripts/record-editorial.mjs",
+    "test:editorial": "node scripts/browser-editorial.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "esbuild": "0.25.10",
+    "lighthouse": "13.5.0",
+    "playwright": "1.64.0"
+  },
+  "dependencies": {
+    "gsap": "3.13.0",
+    "three": "0.180.0"
+  }
+}

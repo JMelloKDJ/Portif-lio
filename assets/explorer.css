@@ -1,0 +1,86 @@
+/* A compact collection: one shared preview, three direct case links. */
+.projects-explorable{padding-block:56px 64px;scroll-margin-top:24px}
+.explorer-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:28px}
+.explorer-heading>div{min-width:0}
+.explorer-heading h2{overflow-wrap:anywhere;font:550 clamp(2.3rem,3.4vw,3.5rem)/1.08 Manrope,Arial,sans-serif;letter-spacing:-.055em;margin-top:18px}
+.explorer-heading h2>span{color:var(--blue)}
+.collection-count{font-size:.85rem;letter-spacing:.08em;color:#dce4f1;text-align:right}.collection-count span{display:block;letter-spacing:0;color:#9baac0;font-size:.8rem;margin-top:8px}
+.project-explorer{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.explorer-trigger{position:relative;display:block;list-style:none;cursor:pointer;min-height:448px;padding:26px 0}
+.explorer-trigger::-webkit-details-marker{display:none}.explorer-trigger:focus-visible{outline-offset:8px}
+.explorer-teaser{display:block;position:relative;width:68%;height:360px;perspective:1300px;pointer-events:none}
+.stack-plane{display:block;position:absolute;top:50%;left:50%;width:54%;aspect-ratio:8/5;transform-origin:center;border:1px solid #ffffff20;border-radius:8px;box-shadow:0 22px 45px #0007;overflow:hidden;transition:transform .3s ease;background:#182334}
+.stack-plane img{width:100%;height:100%;object-fit:cover}
+.plane-0{z-index:3;transform:translate(-86%,-32%) rotateY(-9deg) rotateZ(-8deg)}
+.plane-1{z-index:2;transform:translate(-35%,-61%) translateZ(-35px) rotateY(-8deg) rotateZ(-1deg)}
+.plane-2{z-index:1;transform:translate(14%,-69%) translateZ(-65px) rotateY(-7deg) rotateZ(7deg)}
+.explore-invitation{position:absolute;right:0;bottom:65px;display:flex;flex-direction:column;align-items:flex-start;gap:25px;z-index:4;padding:0;max-width:180px}
+.invitation-note{font-size:1rem;color:#b5c1d3;line-height:1.65;letter-spacing:-.02em}
+.explore-control{display:inline-flex;align-items:center;gap:32px;min-height:48px;border-bottom:1px solid #6e91d0;font-size:.9rem;font-weight:600}.explore-icon{font-size:1.65rem;color:var(--blue)}.open-label{display:none}
+.explorer-trigger:hover .explore-control{color:var(--blue)}
+.project-explorer[open]>.explorer-trigger{min-height:0;display:flex;justify-content:flex-end;padding:18px 0}
+.project-explorer[open] .explorer-teaser,.project-explorer[open] .invitation-note,.project-explorer[open] .closed-label{display:none}
+.project-explorer[open] .explore-invitation{position:static;background:none;padding:0;display:block}
+.project-explorer[open] .open-label{display:inline}.project-explorer[open] .explore-control{font-size:.75rem;min-height:32px;border:0;gap:14px}.project-explorer[open] .explore-icon{font-size:1.2rem;transform:rotate(180deg)}
+/* One selection and one explicit case action. Native radios work without JS. */
+.project-selection{display:grid;grid-template-columns:minmax(240px,.75fr) minmax(0,1.25fr);gap:8%;padding:12px 0 38px;align-items:start}
+.project-index{min-width:0;padding-top:20px}
+.project-choice{display:flex;gap:20px;position:relative;padding:22px 0 26px;border-bottom:1px solid #ffffff14;scroll-margin-top:30px}
+.choice-number{font-size:.72rem;color:#7f8ea2;padding-top:15px;font-variant-numeric:tabular-nums}
+.choice-copy{flex:1;min-width:0}.choice-copy h3{font-weight:450;font-size:clamp(2.3rem,3.7vw,3.5rem);line-height:1.2;letter-spacing:-.06em;margin:0}
+.project-radio{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.project-card{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;cursor:pointer;color:#8895a7;transition:color 300ms ease}
+.selection-mark{font:400 1.4rem/1 Manrope,sans-serif;color:#a8c5e8;opacity:0;transform:translate(-6px,-6px);transition:opacity 300ms ease,transform 300ms ease}
+.project-choice:has(:checked) .project-card{color:#edf2f8}.project-choice:has(:checked) .selection-mark{opacity:1;transform:none}.project-choice:has(:checked) .choice-number{color:#9abde8}
+.project-choice::after{content:"";position:absolute;bottom:-1px;left:0;width:100%;height:1px;background:linear-gradient(90deg,#8ab0e1,transparent);opacity:0;transition:opacity 300ms ease}.project-choice:has(:checked)::after{opacity:.85}
+.project-card:hover{color:#b5d2f8}.project-radio:focus-visible+.project-card{outline:2px solid #a6c9fc;outline-offset:6px;border-radius:2px}
+.choice-copy p{font-size:.8rem;color:#98a7bd;line-height:1.6;margin-top:9px;max-width:29ch}
+.index-note{font-size:.73rem;color:#98a7bd;line-height:1.8;margin-top:28px}
+.preview-stage{min-width:0;position:relative;padding-top:8px}
+.project-preview{display:none;position:relative}.project-preview[hidden]{display:none}
+.project-selection:has([data-select="aatamed"]:checked) [data-panel="aatamed"],.project-selection:has([data-select="horus"]:checked) [data-panel="horus"],.project-selection:has([data-select="atena"]:checked) [data-panel="atena"]{display:block}
+.preview-heading{display:flex;justify-content:space-between;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#a1b5cf;margin-bottom:18px;padding-inline:2px}
+.choice-cover{display:block;position:relative;aspect-ratio:8/5;border:1px solid #7894b530;border-radius:5px;background:#141c28;box-shadow:0 25px 55px -25px #000b;margin:0;isolation:isolate}
+.choice-cover::before,.choice-cover::after{content:"";position:absolute;z-index:-1;inset:0;border:1px solid #9cb9df16;border-radius:5px;background:#111922;transform-origin:100% 100%;transform:rotate(-.8deg) translate(-5px,4px)}
+.choice-cover::after{transform:rotate(-1.6deg) translate(-9px,8px);background:#0d141e;z-index:-2;border-color:#9cb9df0d}
+.choice-cover img{width:100%;height:100%;display:block;object-fit:cover;border-radius:4px}
+.preview-copy{position:relative;z-index:1;padding:30px 0 0;display:grid;grid-template-columns:1fr auto;gap:12px 22px;align-items:start}
+.preview-copy h3{font-size:clamp(1.15rem,1.6vw,1.45rem);font-weight:500;line-height:1.4;letter-spacing:-.035em;max-width:31ch}
+.preview-copy p{grid-column:1/-1;grid-row:2;font-size:.86rem;line-height:1.75;color:#aebcd0;max-width:67ch}
+.preview-copy .text-link{font-size:.78rem;min-height:44px;white-space:nowrap;margin:0;gap:22px;padding:7px 0;border-bottom-color:#6584ad}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.explorer-trigger:hover .plane-0{transform:translate(-88%,-34%) rotateY(-6deg) rotateZ(-9deg)}.explorer-trigger:hover .plane-2{transform:translate(16%,-70%) translateZ(-45px) rotateY(-4deg) rotateZ(8deg)}}
+@media(max-width:1100px){.project-selection{gap:5%;grid-template-columns:minmax(210px,.7fr) minmax(0,1.3fr)}.explorer-teaser{width:80%;height:290px}.explorer-trigger{min-height:340px}.invitation-note{font-size:.85rem}.explore-invitation{bottom:24px}.choice-copy h3{font-size:2.5rem}.preview-copy{display:block}.preview-copy p{margin-top:12px}.preview-copy .text-link{margin-top:14px}}
+@media(max-width:700px){
+ .projects-explorable{padding-block:50px 55px}.explorer-heading{align-items:flex-start;margin-bottom:24px}.explorer-heading h2{font-size:2.1rem;line-height:1.12;max-width:13ch;margin-top:14px}.collection-count{font-size:.68rem;padding-top:5px;white-space:nowrap}.collection-count span{display:none}
+ .explorer-trigger{min-height:0;padding:20px 0}.explorer-teaser{width:100%;height:215px;overflow:clip}.stack-plane{width:62%;border-radius:5px}.plane-0{transform:translate(-76%,-43%) rotate(-8deg)}.plane-1{transform:translate(-45%,-53%) rotate(-1deg)}.plane-2{transform:translate(-30%,-68%) rotate(7deg)}
+ .explore-invitation{position:static;padding:0;align-items:stretch;margin:0;max-width:none}.invitation-note{display:none}.explore-control{justify-content:space-between;border:0;font-size:.9rem;min-height:48px}.explore-icon{font-size:1.5rem}
+ .project-explorer[open]>.explorer-trigger{padding:8px 0 12px}.project-explorer[open] .explore-control{min-height:44px}
+ .project-selection{display:block;padding:0 0 26px}.project-index{padding:0}.project-index [role=radiogroup]{display:flex;flex-wrap:wrap;gap:14px}.project-choice{display:block;flex:1 1 70px;min-width:min-content;padding:5px 0 12px}.choice-number{display:block;font-size:.63rem;padding-top:0;margin-bottom:4px}.choice-copy h3{font-size:clamp(1.4rem,6vw,2rem);letter-spacing:-.055em}.project-card{gap:4px;min-height:48px}.selection-mark{display:none}.choice-copy p{display:none}.index-note{font-size:.7rem;line-height:1.6;margin-top:14px}.index-note br{display:none}.index-note br::after{content:' '}
+ .preview-stage{padding-top:24px;margin:0}.preview-heading{margin-bottom:12px;font-size:.63rem}.choice-cover{border-radius:4px}.preview-copy{padding-top:22px}.preview-copy h3{font-size:1.25rem;max-width:28ch}.preview-copy p{font-size:.83rem;line-height:1.75}.preview-copy .text-link{font-size:.8rem;margin-top:12px;min-height:44px}
+}
+@media(max-width:359px){.explorer-heading h2{font-size:1.85rem}.collection-count{display:none}.explorer-teaser{height:195px}.project-index [role=radiogroup]{gap:10px}.choice-copy h3{font-size:1.4rem}}
+@media(prefers-reduced-motion:reduce){.stack-plane,.project-card,.selection-mark,.project-choice::after{transition:none}}
+@media(forced-colors:active){.project-choice:has(:checked){border-bottom:3px solid Highlight}.project-radio:focus-visible+.project-card{outline-color:Highlight}}
+
+/* The stacked covers scale with the column width, so the stage must too;
+   a fixed 360px height let them cross the section rules on wide layouts. */
+@media(min-width:1101px){.explorer-teaser{height:auto;aspect-ratio:19/10}}
+
+/* Open collection: a soft light behind the preview, tinted by the selected
+   project. Pure CSS (:has on the native radios), so it also works without JS. */
+@property --project-glow{syntax:'<color>';inherits:true;initial-value:#4f8cff}
+.projects-explorable{position:relative;isolation:isolate;--project-glow:#4f8cff;transition:--project-glow .45s ease}
+.projects-explorable:has(#select-horus:checked){--project-glow:#7b3cff}
+.projects-explorable:has(#select-atena:checked){--project-glow:#3aa0b0}
+.projects-explorable::before{content:"";position:absolute;z-index:-1;inset:0 -12%;pointer-events:none;background:radial-gradient(ellipse 46% 52% at 68% 56%,var(--project-glow) 0%,transparent 70%);opacity:0;transition:opacity .45s ease}
+.projects-explorable:has(.project-explorer[open])::before{opacity:.4}
+@media(max-width:700px){.projects-explorable::before{inset:0 -6%;background:radial-gradient(ellipse 70% 30% at 50% 62%,var(--project-glow) 0%,transparent 70%)}}
+@media(prefers-reduced-motion:reduce){.projects-explorable,.projects-explorable::before{transition:none}}
+
+/* The selected title shares the light of its preview, so the pair reads as one. */
+.project-choice::before{content:"";position:absolute;z-index:-1;inset:-14% -22% -14% -16%;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 32% 52%,var(--project-glow) 0%,transparent 72%);opacity:0;transition:opacity .45s ease}
+.project-choice:has(:checked)::before{opacity:.26}
+.project-choice::after{background:linear-gradient(90deg,var(--project-glow,#8ab0e1),transparent)}
+.project-choice:has(:checked) .choice-number,.project-choice:has(:checked) .selection-mark{color:color-mix(in srgb,var(--project-glow) 45%,#fff)}
+@media(max-width:700px){.project-choice::before{inset:-10% -30%;background:radial-gradient(ellipse 50% 50% at 50% 55%,var(--project-glow) 0%,transparent 72%)}}
+@media(prefers-reduced-motion:reduce){.project-choice::before{transition:none}}

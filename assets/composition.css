@@ -1,0 +1,39 @@
+/* Motion vocabulary: controls 150ms, selection 360ms, ambient 16s; transform/opacity only. */
+:root{--motion-fast:150ms;--motion-base:360ms;--motion-ambient:16s;--motion-ease:cubic-bezier(.2,.75,.25,1)}
+.hero{isolation:isolate}.hero>.contour-art{position:absolute;z-index:-1;pointer-events:none;width:76%;height:100%;inset:0 -4% 0 auto;opacity:.35;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 35%)}
+.contour-art svg{display:block;width:100%;height:100%;overflow:visible}.contour-sheet{transform-origin:50% 50%}.is-moving .contour-sheet{animation:contour-drift var(--motion-ambient) ease-in-out infinite alternate}
+@keyframes contour-drift{from{transform:translate(-14px,8px) rotate(-3deg) scale(.97);opacity:.7}to{transform:translate(14px,-10px) rotate(3deg) scale(1.03);opacity:1}}
+.hero-bottom{position:relative}.motion-toggle{background:none;border:0;color:#a7b7ce;font:inherit;font-size:.68rem;display:flex;gap:12px;align-items:center;min-height:44px;padding:0;order:2}.motion-toggle[hidden]{display:none}.hero-bottom>a{order:3}.motion-toggle:hover{color:var(--ink)}
+/* A full-width profile has its own visual field; the invitation follows it. */
+.profile-section{position:relative;background:#0e141e;border-top:1px solid #29384b;border-bottom:1px solid #29384b;scroll-margin-top:24px;overflow:clip}
+.profile-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:5%;align-items:center;min-height:620px;padding-block:80px}
+.profile-copy{position:relative;z-index:1}.profile-copy h2{font-size:clamp(2.4rem,3.8vw,4rem);font-weight:550;line-height:1.15;letter-spacing:-.055em;margin:26px 0 28px;max-width:18ch}.profile-copy h2 span{color:#93b7fc}.profile-intro{font-size:1.1rem;line-height:1.7;color:#e0e8f5}.profile-bio{font-size:.94rem;color:#acbad0;line-height:1.85;max-width:48ch;margin-top:25px}
+.profile-visual{position:relative;min-height:450px;align-self:stretch;display:flex;align-items:flex-end}.profile-visual .contour-art{position:absolute;inset:-30px -80px 30px -80px;pointer-events:none}.profile-coordinate{position:relative;display:flex;justify-content:space-between;gap:16px;width:100%;border-top:1px solid #354a68;padding-top:18px;font-size:.68rem;letter-spacing:.04em;color:#b3c8e8}
+.closing{position:relative;padding:0;border-top:0;background:#090d14}.closing-contact{display:block;padding:70px 0 44px;margin:0;scroll-margin-top:24px;position:relative}.contact-heading{display:grid;grid-template-columns:1.5fr .7fr;gap:20px 60px;align-items:end}.contact-heading>.eyebrow{grid-column:1/-1}.closing .contact-heading h2{font-size:clamp(2.8rem,6vw,6rem);font-weight:550;line-height:1.12;letter-spacing:-.065em;max-width:none;margin:0}.closing .contact-heading h2 span{color:var(--blue);display:inline-block;font-size:.65em;margin-left:.3em;vertical-align:middle}.contact-heading>p:not(.eyebrow){color:#a9bad2;font-size:.88rem;line-height:1.7;max-width:30ch;margin-bottom:6px}.contact-actions{display:flex;align-items:center;gap:70px;justify-content:space-between;margin-top:38px}.closing-mail{margin:0;display:grid;grid-template-columns:1fr auto;gap:4px 40px;flex:1;max-width:660px;border-top:1px solid #314564;border-bottom:1px solid #557db5;padding:18px 0;transition:color var(--motion-fast) ease}.closing-mail .mail-label{font-size:.68rem;color:#9daec7;grid-column:1}.closing-mail .mail-address{font-size:clamp(1rem,1.8vw,1.6rem);color:#e7effd;grid-column:1;overflow-wrap:anywhere}.closing-mail .mail-arrow{grid-column:2;grid-row:1/3;align-self:center;font-size:2rem}.closing-mail:hover .mail-address{color:#94baff}.closing-links{margin:0;gap:30px;flex-wrap:wrap}.closing .footer-line{margin-top:0;padding-block:24px}
+@media(min-width:701px) and (max-width:1100px){.profile-grid{min-height:540px;padding-block:60px}.profile-copy h2{font-size:2.6rem}.profile-visual{min-height:360px}.contact-heading{gap:25px;grid-template-columns:1.4fr 1fr}.contact-actions{gap:35px}.profile-coordinate{font-size:.6rem;gap:8px}}
+@media(max-width:700px){
+ .hero>.contour-art{width:100%;height:44%;inset:21% -6% auto auto;opacity:.24;mask-image:linear-gradient(0deg,transparent,#000 35%,#000 70%,transparent)}.hero-bottom{flex-wrap:wrap;gap:8px}.hero-bottom>p{flex:1}.hero-bottom .motion-toggle{font-size:.64rem}.hero-bottom>a{flex-basis:100%}.is-moving .contour-sheet{animation-name:contour-drift-mobile}
+ .project-choice,.project-choice:first-child{grid-template-columns:minmax(0,1fr) 84px;gap:10px}.preview-button{margin:0;padding:4px 8px;min-height:48px;gap:5px;font-size:.78rem}.case-action{font-size:.68rem;margin-top:7px;gap:16px}.project-card p{font-size:.75rem}.cover-action{bottom:10px;right:10px;padding:6px 10px;font-size:.65rem}.index-note{font-size:.72rem}
+ .profile-grid{display:flex;flex-direction:column;align-items:stretch;gap:0;padding-top:46px;padding-bottom:30px;min-height:0}.profile-copy h2{font-size:clamp(2rem,8.7vw,3.3rem);max-width:19ch;margin:22px 0}.profile-intro{font-size:.95rem}.profile-bio{font-size:.89rem;line-height:1.85;margin-top:22px}.profile-visual{min-height:265px;align-self:auto;margin-top:10px}.profile-visual .contour-art{inset:-5px -10px 15px -10px}.profile-coordinate{font-size:.61rem;padding-top:13px;gap:10px}
+ .closing-contact{padding:42px 0 32px;border:0}.contact-heading{display:block}.closing .contact-heading h2{font-size:clamp(2.25rem,9.7vw,3.5rem);margin:22px 0 18px;letter-spacing:-.065em}.contact-heading>p:not(.eyebrow){font-size:.85rem;max-width:31ch}.contact-actions{display:block;margin-top:28px}.closing-mail{gap:7px 12px;padding-block:16px}.closing-mail .mail-address{font-size:clamp(.87rem,4.35vw,1.2rem)}.closing-mail .mail-label{font-size:.65rem}.closing-links{gap:30px;margin-top:18px;font-size:.78rem}.closing .footer-line{padding-block:22px}
+}
+@keyframes contour-drift-mobile{from{transform:translate(-6px,4px) rotate(-1.5deg);opacity:.75}to{transform:translate(6px,-4px) rotate(1.5deg);opacity:1}}
+@media(prefers-reduced-motion:reduce){.is-moving .contour-sheet{animation:none}.closing-mail{transition:none}.motion-toggle{display:none}}
+
+.profile-visual{padding-bottom:44px}.profile-motion-toggle{position:absolute;bottom:0;right:0;min-height:44px}.motion-toggle{font-size:.72rem}
+
+
+
+/* Keep the moving sheet clear of the coordinate labels and pause control. */
+.profile-visual .contour-art{bottom:78px;overflow:hidden}
+
+.closing-links .contact-phone{white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* Wide screens: the composition was tuned around 1600px. Above that it scales
+   as a whole instead of leaving a narrow column with empty sides. */
+@media(min-width:1800px){html{zoom:1.12}}
+@media(min-width:2000px){html{zoom:1.25}}
+@media(min-width:2300px){html{zoom:1.4}}
+@media(min-width:2600px){html{zoom:1.55}}
+@media(min-width:3000px){html{zoom:1.8}}
+@media(min-width:3500px){html{zoom:2.1}}

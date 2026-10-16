@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750"><g font-family="Arial, sans-serif"><rect width="1200" height="750" fill="#151d27"/><path d="M850 0V750M1000 0V750" stroke="#ffffff08"/>
+<text x="62" y="96" font-size="64" fill="#f2f5fa" font-weight="600" letter-spacing="-3">Hórus</text><text x="65" y="142" font-size="20" fill="#a6b8d0" letter-spacing="3">METAS EM ACOMPANHAMENTO</text>
+<path d="M340 371H443M763 371H852" stroke="#7297d6" stroke-width="4"/><path d="M427 356l16 15-16 15M836 356l16 15-16 15" fill="none" stroke="#7297d6" stroke-width="4"/>
+<path d="M83 294H331V448H83Z" fill="#202e40" stroke="#526984" stroke-width="2"/><path d="M105 421H309" stroke="#7297d6" stroke-width="5"/>
+<text x="106" y="339" font-size="21" fill="#a6b8d0" letter-spacing="2">INDICADOR</text><text x="106" y="389" font-size="40" fill="#f2f5fa" font-weight="600">Entregas</text>
+<rect x="463" y="294" width="280" height="154" rx="77" fill="#2b4770"/><circle cx="506" cy="376" r="9" fill="#b8d3ff"/>
+<text x="533" y="339" font-size="21" fill="#b8cdec" letter-spacing="2">STATUS</text><text x="533" y="389" font-size="39" fill="#f2f5fa" font-weight="600">Atenção</text>
+<path d="M897 294H1108Q1133 294 1133 319V423Q1133 448 1108 448H936L895 478V448Q873 448 873 423V319Q873 294 897 294" fill="#d2e2f7"/>
+<text x="902" y="339" font-size="21" fill="#3a567d" letter-spacing="2">AVISO</text><text x="902" y="389" font-size="40" fill="#172d4b" font-weight="600">Equipe</text>
+<text x="64" y="698" font-size="27" fill="#dce5f3" >Do indicador ao acompanhamento.</text><text x="1130" y="698" font-size="24" fill="#a6b8d0" text-anchor="end">02</text></g></svg>

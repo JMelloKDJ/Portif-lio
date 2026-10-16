@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750"><g font-family="Arial, sans-serif"><rect width="1200" height="750" fill="#202d43"/><circle cx="1140" cy="30" r="310" fill="#5474a7" fill-opacity=".08"/>
+<text x="1130" y="96" font-size="64" fill="#f2f5fa" font-weight="600" letter-spacing="-3" text-anchor="end">Atena</text><text x="1130" y="142" font-size="20" fill="#b4c4db" letter-spacing="3" text-anchor="end">CAPACITAÇÃO &amp; ATENDIMENTO</text>
+<g transform="translate(130 218) rotate(-9 190 195)"><rect x="26" y="-9" width="340" height="356" rx="5" fill="#6f8fbf"/><rect x="12" y="0" width="340" height="356" rx="5" fill="#b4c8e4"/><rect y="14" width="340" height="356" rx="5" fill="#ecf0f6"/><rect x="25" y="43" width="7" height="290" fill="#4b77b9"/>
+<text x="62" y="100" font-size="22" fill="#526987" letter-spacing="3">TRILHAS</text><text x="61" y="175" font-size="29" fill="#1d3452" font-weight="600">Conhecimento</text><text x="61" y="216" font-size="29" fill="#1d3452" font-weight="600">para aprender.</text><path d="M62 266H276M62 291H234" stroke="#a7b8cf" stroke-width="5"/></g>
+<path d="M494 346C595 346 523 297 632 297" stroke="#92b5ec" stroke-width="3" fill="none"/><path d="M619 283l15 14-15 14" stroke="#92b5ec" stroke-width="3" fill="none"/>
+<path d="M670 219H1053Q1078 219 1078 244V362Q1078 387 1053 387H744L704 413V387H670Q645 387 645 362V244Q645 219 670 219" fill="#416fba"/>
+<text x="678" y="273" font-size="20" fill="#d4e3fb" letter-spacing="2">WHATSAPP</text><text x="678" y="328" font-size="34" fill="#fff" font-weight="600">Como funciona?</text>
+<path d="M863 412V464" stroke="#92b5ec" stroke-width="3"/><path d="M849 451l14 15 14-15" stroke="#92b5ec" stroke-width="3" fill="none"/>
+<circle cx="696" cy="533" r="43" fill="#d7e3f4"/><circle cx="696" cy="524" r="10" fill="#29466f"/><path d="M678 555q0-20 18-20t18 20" fill="#29466f"/>
+<text x="759" y="526" font-size="25" fill="#aebfd7" >Próximo passo:</text><text x="759" y="563" font-size="29" fill="#edf3fc" font-weight="600">a equipe assume.</text>
+<text x="64" y="698" font-size="27" fill="#dce5f3" >Conteúdo, conversa e apoio humano.</text><text x="1130" y="698" font-size="24" fill="#a6b8d0" text-anchor="end">03</text></g></svg>
