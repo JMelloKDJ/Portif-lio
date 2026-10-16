@@ -119,30 +119,30 @@
       "number": "03",
       "category": "Conhecimento + IA aplicada",
       "title": "Atendimento para uma plataforma de capacitação.",
-      "summary": "Atena é um ecossistema de capacitação da EJ ADM UFBA. Desenvolvi sua camada técnica de atendimento: chatbot de WhatsApp, consulta à base de conhecimento e encaminhamento de interessados à equipe.",
+      "summary": "Atena é um ecossistema de capacitação da EJ ADM UFBA. Desenvolvi sua camada técnica de atendimento: agente de IA no WhatsApp, consulta à base de conhecimento e encaminhamento de interessados à equipe.",
       "context": "Atena é um ecossistema de capacitação da EJ ADM UFBA, com trilhas de conteúdo e uma comunidade voltada à formação empreendedora. O atendimento ajuda interessados a conhecer a plataforma e seus conteúdos.",
       "problem": "Como orientar interessados sobre a plataforma e seus conteúdos, mantendo um caminho claro para a equipe assumir o atendimento?",
       "audience": "Pessoas interessadas na plataforma e equipe responsável pelo atendimento.",
-      "role": "Desenvolvi a infraestrutura e a camada técnica: chatbot com recuperação de conhecimento no WhatsApp, ingestão automática de documentos e fluxo de encaminhamento de leads. Também contribuí na estruturação de módulos e aulas e no modelo de precificação do produto.",
+      "role": "Desenvolvi a infraestrutura e a camada técnica: agente de IA no WhatsApp com recuperação de conhecimento, ingestão automática de documentos e fluxo de encaminhamento de leads. Também contribuí na estruturação de módulos e aulas e no modelo de precificação do produto.",
       "collaboration": "Atena foi idealizada por Yan Ferreira e desenvolvida em equipe na EJ ADM UFBA. Minha autoria está na infraestrutura e na contribuição técnica; não na criação integral do produto.",
       "stage": "Entrega registrada em 2026.1",
-      "period": "Atuação em módulos e aulas registrada em 2025.2; evolução da infraestrutura e do chatbot no ciclo de 2026.1.",
+      "period": "Atuação em módulos e aulas registrada em 2025.2; evolução da infraestrutura e do agente no ciclo de 2026.1.",
       "solutions": [
         {
           "title": "Consultar o conteúdo para responder",
-          "text": "O chatbot no n8n usa recuperação de conhecimento (RAG) para apoiar as respostas no WhatsApp. A ingestão de documentos alimenta a base consultada no atendimento."
+          "text": "O agente de IA, construído no n8n, usa recuperação de conhecimento (RAG) para apoiar as respostas no WhatsApp. A ingestão de documentos alimenta a base consultada no atendimento."
         },
         {
           "title": "Conectar a conversa à equipe",
           "text": "Um fluxo de encaminhamento de leads, com canal dedicado de alertas, liga o atendimento automatizado à atuação humana. O registro de gestão descreve um lead real encaminhado e qualificado."
         },
         {
-          "title": "Sustentar o produto além do chatbot",
+          "title": "Sustentar o produto além do agente",
           "text": "A contribuição técnica integrou o trabalho coletivo de estruturação de módulos e aulas e a inclusão de um modelo de precificação próprio do produto."
         }
       ],
       "evidence": "A imagem deste caso é uma representação original do fluxo: conteúdo, atendimento e encaminhamento. Não é uma captura do produto. A descrição da entrega se apoia no registro de gestão de 2026.1; conversas e documentos internos não são publicados.",
-      "result": "O relatório do ciclo 2026.1 registra o chatbot funcional e a entrada em operação do fluxo de encaminhamento, com um lead real encaminhado e qualificado. Isso documenta uma entrega histórica, sem demonstrar adoção em escala ou impacto comercial.",
+      "result": "O relatório do ciclo 2026.1 registra o agente funcional e a entrada em operação do fluxo de encaminhamento, com um lead real encaminhado e qualificado. Isso documenta uma entrega histórica, sem demonstrar adoção em escala ou impacto comercial.",
       "limitations": "A operação atual da plataforma não foi revalidada. Não há nesta página uma avaliação pública da qualidade das respostas ou de conversão. A contribuição não representa autoria integral da Atena; materiais e integrações internos permanecem privados.",
       "technologies": [
         "n8n",
@@ -154,8 +154,8 @@
       "publication": "public",
       "links": [],
       "featured": true,
-      "homeRole": "Chatbot · base de conhecimento · encaminhamento",
-      "homeSummary": "Desenvolvi a camada técnica do chatbot de WhatsApp, com consulta à base de conhecimento e encaminhamento de interessados à equipe. Um projeto coletivo da EJ ADM UFBA, idealizado por Yan Ferreira.",
+      "homeRole": "Agente de IA · base de conhecimento · encaminhamento",
+      "homeSummary": "Desenvolvi a camada técnica do agente de IA no WhatsApp, com consulta à base de conhecimento e encaminhamento de interessados à equipe. Um projeto coletivo da EJ ADM UFBA, idealizado por Yan Ferreira.",
       "indexDescription": "Conteúdo, WhatsApp e encaminhamento à equipe."
     },
     {

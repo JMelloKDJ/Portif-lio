@@ -36,7 +36,9 @@ void main(){
 }`;
 // Control points: a block on the left sends the line right, and vice versa.
 function route(){
- const W=innerWidth,mobile=W<=700,top=surface.getBoundingClientRect().top;
+ // Rendered sizes only: on wide screens the page is zoomed (composition.css),
+ // so offsetHeight would end the line well before the page does.
+ const W=innerWidth,mobile=W<=700,box=surface.getBoundingClientRect(),top=box.top;
  // On phones the text spans the width, so the line only sways along the right edge.
  const at={left:mobile?1.02:.78,right:mobile?.9:.2,cover:mobile?1.02:.6};
  const pts=[[0,mobile?1.1:1.02]];
@@ -50,8 +52,8 @@ function route(){
  const merged=[];
  for(let i=0;i<pts.length;){let j=i;while(j+1<pts.length&&pts[j+1][1]===pts[i][1])j++;merged.push([(pts[i][0]+pts[j][0])/2,pts[i][1]]);i=j+1;}
  // Past the last block it leaves through the bottom edge, as on the home.
- merged.push([surface.offsetHeight+500,mobile?1.1:.62]);merged.length=Math.min(merged.length,MAX);
- height=surface.offsetHeight;count=merged.length;
+ merged.push([box.height+500,mobile?1.1:.62]);merged.length=Math.min(merged.length,MAX);
+ height=box.height;count=merged.length;
  ys=new Float32Array(MAX);xs=new Float32Array(MAX);merged.forEach(([y,x],i)=>{ys[i]=y;xs[i]=x*W;});
 }
 function layout(){
