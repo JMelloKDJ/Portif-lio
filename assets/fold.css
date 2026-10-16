@@ -50,3 +50,8 @@
    lines behind the figure. */
 .home-surface .portrait.has-portrait::before{content:"";position:absolute;inset:0;background:#090c11;mask-image:url('joao-victor-mask.webp'),linear-gradient(#000 82%,transparent 100%);mask-mode:luminance,alpha;mask-size:100% 100%;mask-repeat:no-repeat;mask-composite:intersect}
 
+
+/* Smaller portrait on desktop, with softer side fades so the shoulders are not
+   cut off abruptly. */
+@media(min-width:1101px){.home-surface .portrait{max-width:470px}}
+.home-surface .portrait img{mask-image:var(--portrait-mask,linear-gradient(#fff,#fff)),linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(#000 62%,#000d 74%,transparent 98%)}

@@ -61,3 +61,7 @@
 @media(max-width:359px){.explorer-heading h2{font-size:1.85rem}.collection-count{display:none}.explorer-teaser{height:195px}.project-index [role=radiogroup]{gap:10px}.choice-copy h3{font-size:1.4rem}}
 @media(prefers-reduced-motion:reduce){.stack-plane,.project-card,.selection-mark,.project-choice::after{transition:none}}
 @media(forced-colors:active){.project-choice:has(:checked){border-bottom:3px solid Highlight}.project-radio:focus-visible+.project-card{outline-color:Highlight}}
+
+/* The stacked covers scale with the column width, so the stage must too;
+   a fixed 360px height let them cross the section rules on wide layouts. */
+@media(min-width:1101px){.explorer-teaser{height:auto;aspect-ratio:19/10}}
