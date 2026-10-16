@@ -59,7 +59,7 @@
         "Testes locais"
       ],
       "cover": "assets/delta-editorial.svg",
-      "alt": "Uma preferência muda durante a conversa; a autorização permanece pendente.",
+      "alt": "Ciclo do agente Delta: interpreta a preferência, valida, atualiza o estado da conversa e aguarda autorização antes de agir.",
       "publication": "public",
       "links": [],
       "featured": true,
@@ -94,17 +94,17 @@
           "text": "A consolidação de quadros do Monday para avaliação de desempenho pertence ao AD Conexões. Ela não é atribuída ao Hórus sem documentação específica."
         }
       ],
-      "evidence": "Diagrama conceitual do painel e da rotina de alertas, elaborado a partir da descrição pública do projeto. A demonstração abaixo usa exclusivamente valores fictícios.",
+      "evidence": "Captura da página Farol Hórus do relatório em Power BI. A demonstração abaixo usa exclusivamente valores fictícios.",
       "result": "A entrega descrita combina visualização de indicadores e comunicação periódica de status. O resultado apresentado é essa capacidade de acompanhamento; não há medição publicada de economia de tempo ou impacto no negócio.",
-      "limitations": "Os dados e o modelo do relatório operacional não fazem parte desta apresentação. A versão pública usa uma representação conceitual; a operação atual não foi revalidada.",
+      "limitations": "A captura mostra apenas a página de acompanhamento do Farol; páginas com dados de membros não são reproduzidas. O modelo do relatório não faz parte desta apresentação, e a operação atual não foi revalidada.",
       "technologies": [
         "Power BI",
         "DAX",
         "n8n",
         "Modelagem de dados"
       ],
-      "cover": "assets/horus-editorial.svg",
-      "alt": "Diagrama ilustrativo: o indicador de entregas recebe um status de atenção, que orienta um aviso à equipe.",
+      "cover": "assets/horus-farol.webp",
+      "alt": "Página Farol Hórus do painel em Power BI: semáforo de status, diretoria e data de referência, calendário e evolução do farol dos KPIs e KRs.",
       "publication": "public",
       "links": [],
       "demo": "demonstracao/",
