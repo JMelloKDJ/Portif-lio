@@ -47,8 +47,9 @@
 
 /* The portrait fades at its edges, so the contour field showed through the
    shoulders. A surface-coloured silhouette sits under the photo and keeps the
-   lines behind the figure. */
-.home-surface .portrait.has-portrait::before{content:"";position:absolute;inset:0;background:#090c11;mask-image:url('joao-victor-mask.webp'),linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(#000 55%,transparent 96%);mask-mode:luminance,alpha,alpha;mask-size:100% 100%;mask-repeat:no-repeat;mask-composite:intersect}
+   lines behind the figure. It stays opaque wherever the photo is visible,
+   even faintly, or the lines read as drawn over the shoulders. */
+.home-surface .portrait.has-portrait::before{content:"";position:absolute;inset:0;background:#090c11;mask-image:url('joao-victor-mask.webp'),linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(#000 85%,transparent);mask-mode:luminance,alpha,alpha;mask-size:100% 100%;mask-repeat:no-repeat;mask-composite:intersect}
 
 
 /* Smaller portrait on desktop. The source photo crops the shoulders at its
